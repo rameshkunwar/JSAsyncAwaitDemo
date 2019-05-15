@@ -41,6 +41,8 @@ const posts = [
         setTimeout(resolve, 2000, 'Goodbye promise')
     );
 
-    Promise.all([promise1, promise2, promise3])
+    const promise4 = fetch('https://jsonplaceholder.typicode.com/users').then(response => response.json());
+
+    Promise.all([promise1, promise2, promise3, promise4])
     .then(values => console.log(values));
        
