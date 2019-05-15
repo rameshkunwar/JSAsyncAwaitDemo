@@ -30,7 +30,17 @@ const posts = [
         } );
     }
 
-    createPost({title:'Post three', body:'This is post3'})
-    .then(getPosts)
-    .catch(err => console.log(err));
+    // createPost({title:'Post three', body:'This is post3'})
+    // .then(getPosts)
+    // .catch(err => console.log(err));
+
+    //Promise.all
+    const promise1 = Promise.resolve("Resolve first");
+    const promise2 = 100;
+    const promise3 = new Promise((resolve, reject) => 
+        setTimeout(resolve, 2000, 'Goodbye promise')
+    );
+
+    Promise.all([promise1, promise2, promise3])
+    .then(values => console.log(values));
        
